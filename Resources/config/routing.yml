@@ -1,0 +1,4 @@
+AirOSControlCenterBundle_homepage:
+    locales:  { en: /test1 }
+    defaults: { _controller: AirOSControlCenterBundle:Default:index }
+    type: db
