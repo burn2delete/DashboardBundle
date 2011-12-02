@@ -1,9 +1,9 @@
 <?php
 
-namespace AirOS\ControlCenterBundle;
+namespace AirOS\DashboardBundle;
 
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 
-class AirOSControlCenterBundle extends Bundle
+class AirOSDashboardBundle extends Bundle
 {
 }

@@ -1,10 +1,9 @@
 <?php
-namespace AirOS\ControlCenterBundle\Event;
+namespace AirOS\DashboardBundle\Event;
 
 use Symfony\Component\EventDispatcher\Event;
-use Symfony\Component\HttpFoundation\Session;
 
-class InitAdminDesktopEvent extends Event
+class InitUserDesktopEvent extends Event
 {
 	protected $session;
 
@@ -12,9 +11,9 @@ class InitAdminDesktopEvent extends Event
 	{
 		$this->session = $session;
 
-		if (!$session->has('adminModules'))
+		if (!$session->has('userModules'))
 		{
-			$session->set('adminModules', null);
+			$session->set('userModules', null);
 		}
 	}
 
@@ -26,7 +25,7 @@ class InitAdminDesktopEvent extends Event
 	public function setModule($moduleName, $info = array())
 	{
 		//todo: need to check vars to make sure they are of correct type
-		$this->session->set('adminModules', array(
+		$this->session->set('userModules', array(
 			'name' => "$moduleName",
 			'info' => $info,
 			)
@@ -35,21 +34,19 @@ class InitAdminDesktopEvent extends Event
 
 	public function clearModules()
 	{
-		$this->session->set('adminModules', null);
+		$this->session->set('userModules', null);
 	}
 
-	//todo: verify this works!!! I hacked it together in 3 minutes, then copied it a bunch
+	//todo: verify this works!!! I hacked it together in 3 minutes
 	public function removeModule($moduleName)
 	{
-		foreach($this->session->getAttributes() as $adminModulesArray => $modulesIndex)
+		foreach($this->session->getAttributes() as $userModulesArray => $modulesIndex)
 		{
 			foreach($modulesIndex as $index => $moduleArray)
-			{
 				if($index['name'] == $moduleName)
 				{
 					unset($index);
 				}
-			}
 		}
 	}
 }

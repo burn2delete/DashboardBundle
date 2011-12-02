@@ -1,10 +1,9 @@
 <?php
 
-namespace AirOS\ControlCenterBundle\Controller;
+namespace AirOS\DashboardBundle\Controller;
 
-use AirOS\ControlCenterBundle\Event\ControlCenterEvents;
-use AirOS\ControlCenterBundle\Event\InitAdminDesktopEvent;
-use AirOS\TopBarModule\AirOSTopBarModule;
+use AirOS\DashboardBundle\Event\ControlCenterEvents;
+use AirOS\DashboardBundle\Event\InitAdminDesktopEvent;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\Session;
